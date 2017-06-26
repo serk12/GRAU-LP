@@ -1,0 +1,27 @@
+start
+A;B;C|D+E|F#G
+end
+Sales
+
+start
+X+Y;Z#M|P+Q;R;T
+end
+Accounting
+
+start
+T1;(T2+T3;(T4+T5)#T6)#T7|T8
+end
+HumanResources
+
+connection A X
+connection D M
+file F -> B
+file F <- M
+file Y -> A
+QUERIES
+critical Sales
+critical Pepito
+difference Sales Accounting
+difference Sales Sales
+correctfile F
+correctfile Y

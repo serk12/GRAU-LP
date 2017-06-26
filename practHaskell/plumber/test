@@ -1,0 +1,7 @@
+#!/bin/bash
+make 
+./plumber < $1 > programhs1.txt
+./plumber < $2 > programhs2.txt
+ghc -o run --make plumber.hs
+./run
+rm run

@@ -1,0 +1,3 @@
+#! /bin/bash
+./pccts < "$1" > programhs.txt
+./program

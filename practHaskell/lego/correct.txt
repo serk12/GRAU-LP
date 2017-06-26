@@ -1,0 +1,29 @@
+Seq[ 
+    Input( Var X), 
+    Input( Var Y), 
+    Cond( 
+        OR( 
+            OR( 
+                Gt( Var X, Const 0), 
+                Eq( Var X, Const 0)
+            ), 
+            NOT( Gt( Const 0, Var Y))
+        ), 
+            (
+                Seq[ 
+                    Assign( Var Z, Const 1), 
+                    Loop( 
+                        Gt( Var X, Var Y), 
+                        Seq[ 
+                            Assign( Var X, Minus( Var X, Const 1)),
+                            Assign( Var Z, Times( Var Z, Var   Z))
+                        ]
+                    )
+                ], 
+                Seq[ 
+                    Assign( Var Z, Const 0)
+                ]
+            )
+        ), 
+    Print( Var Z)
+]
